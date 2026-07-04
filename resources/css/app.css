@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Archivo';
+    src: url('/fonts/archivo.woff2') format('woff2');
+    font-weight: 400 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/jetbrains-mono.woff2') format('woff2');
+    font-weight: 500 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-paper text-navy-900 font-sans antialiased;
+    }
+
+    h1, h2, h3 {
+        @apply font-sans font-extrabold tracking-tight;
+        text-wrap: balance;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline: 2px solid theme('colors.amber.DEFAULT');
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation: none !important;
+            transition: none !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer components {
+    .wrap {
+        @apply mx-auto max-w-wrap px-8 sm:px-8;
+    }
+
+    .eyebrow {
+        @apply font-mono text-xs font-medium uppercase tracking-widest text-amber;
+    }
+
+    .eyebrow-on-dark {
+        color: #e3ab68;
+    }
+
+    .btn {
+        @apply inline-flex items-center gap-2 rounded px-6 py-3.5 text-sm font-semibold transition;
+    }
+
+    .btn-primary {
+        @apply btn bg-amber text-navy-950;
+    }
+    .btn-primary:hover {
+        background-color: theme('colors.amber.light');
+    }
+
+    .btn-ghost {
+        @apply btn border border-white/40 text-white;
+    }
+    .btn-ghost:hover {
+        @apply border-white;
+    }
+
+    .stat-figure {
+        @apply block font-mono text-2xl font-bold text-white;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .stat-label {
+        @apply mt-1 text-sm text-[#9fb0bd];
+    }
+
+    .section {
+        @apply py-20 sm:py-24;
+    }
+
+    .nav-link {
+        @apply border-b-2 border-transparent py-1.5 text-sm font-medium uppercase tracking-wide text-[#c9d4dd] transition hover:border-amber hover:text-white;
+    }
+
+    .nav-link-current {
+        @apply border-amber text-white;
+    }
+}
