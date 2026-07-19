@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: infolog-app
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8082}:80"
+    env_file:
+      - .env.docker
+    volumes:
+      - app-storage:/var/www/html/storage
+
+volumes:
+  app-storage:
+    driver: local

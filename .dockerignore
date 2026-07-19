@@ -1,0 +1,44 @@
+# Dependencies (installed inside containers)
+/node_modules
+/vendor
+
+# Build artifacts
+/public/build
+/public/hot
+
+# Environment and secrets
+.env
+.env.backup
+.env.production
+
+# IDE / editor
+/.idea
+/.vscode
+/.fleet
+/.nova
+/.zed
+/.phpactor.json
+
+# Git
+.git
+.gitattributes
+.gitignore
+
+# Docker (avoid recursive context)
+docker-compose.yml
+docker-compose.prod.yml
+docker-compose.override.yml
+
+# Testing & CI
+/.phpunit.cache
+.phpunit.result.cache
+/tests
+phpunit.xml
+
+# Documentation
+README.md
+DEPLOY.md
+
+# OS files
+.DS_Store
+Thumbs.db
