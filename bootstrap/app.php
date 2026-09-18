@@ -17,6 +17,22 @@ $app = new Illuminate\Foundation\Application(
 
 /*
 |--------------------------------------------------------------------------
+| Raíz web en hosting compartido
+|--------------------------------------------------------------------------
+|
+| En cPanel (DonWeb) el servidor sirve desde ~/public_html, que es hermana
+| de esta carpeta, no ./public. Sin esto Laravel busca el manifest de Vite
+| en el lugar equivocado y toda la app devuelve 500.
+|
+| En desarrollo y en Docker esa carpeta no existe, así que no hace nada.
+|
+*/
+if (is_dir($sharedPublic = dirname(__DIR__) . '/../public_html')) {
+    $app->usePublicPath(realpath($sharedPublic));
+}
+
+/*
+|--------------------------------------------------------------------------
 | Bind Important Interfaces
 |--------------------------------------------------------------------------
 |
