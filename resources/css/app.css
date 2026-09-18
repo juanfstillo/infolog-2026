@@ -98,4 +98,64 @@
     .nav-link-current {
         @apply border-amber text-white;
     }
+
+    /* --- Destaque de servicio --- */
+    .badge-featured {
+        @apply inline-flex items-center gap-2 rounded bg-amber px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-widest text-navy-950;
+    }
+
+    /* --- Visor de PDF --- */
+    .pdf-toolbar {
+        @apply flex flex-wrap items-center justify-center gap-2 border-b border-white/10 bg-navy-900 px-4 py-3;
+    }
+
+    .pdf-btn {
+        @apply inline-flex h-9 min-w-9 items-center justify-center gap-1.5 rounded border border-white/15 bg-navy-800 px-3 text-sm font-semibold text-white transition;
+    }
+    .pdf-btn:hover:not(:disabled) {
+        @apply border-amber text-amber;
+    }
+    .pdf-btn:disabled {
+        @apply cursor-not-allowed opacity-40;
+    }
+
+    .pdf-zoom-level {
+        @apply min-w-[4.5rem] text-center font-mono text-sm font-medium text-[#c9d4dd];
+        font-variant-numeric: tabular-nums;
+    }
+
+    .pdf-stage {
+        @apply overflow-auto bg-navy-800 p-4 sm:p-6;
+        max-height: min(80vh, 1000px);
+    }
+
+    .pdf-stage canvas {
+        /* Sin max-width: el zoom crece el canvas y .pdf-stage aporta el scroll. */
+        @apply mx-auto block rounded shadow-2xl;
+    }
+
+    /* --- Reproductor institucional --- */
+    .video-frame {
+        @apply relative w-full overflow-hidden rounded border border-white/15 bg-navy-950;
+        aspect-ratio: 16 / 9;
+    }
+
+    .video-frame iframe {
+        @apply absolute inset-0 h-full w-full;
+        border: 0;
+    }
+
+    .video-unmute {
+        /* El offset despeja la barra de controles nativa de YouTube
+           (~36px en un reproductor chico, ~48px en uno grande). */
+        @apply absolute bottom-12 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 rounded bg-amber px-4 py-2.5 text-xs font-bold text-navy-950 shadow-xl transition;
+        @apply sm:bottom-16 sm:gap-2.5 sm:px-5 sm:py-3 sm:text-sm;
+        z-index: 2;
+    }
+    .video-unmute:hover {
+        background-color: theme('colors.amber.light');
+    }
+    .video-unmute[hidden] {
+        display: none !important;
+    }
 }

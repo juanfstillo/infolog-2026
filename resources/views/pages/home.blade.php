@@ -67,8 +67,11 @@
         </div>
     </section>
 
+    {{-- SERVICIO DESTACADO: DIGITALIZACIÓN --}}
+    @include('partials.digitalizacion-band')
+
     {{-- ROADMAP / SUPPORT IMAGE --}}
-    <section class="pb-24">
+    <section class="bg-paper py-24">
         <div class="wrap">
             <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
                 <img src="/images/escaner.jpg" alt="Sala de escaneo de Infolog" class="rounded border border-line w-full">
@@ -113,7 +116,7 @@
 
     {{-- TRUST --}}
     <section class="bg-paper-tint border-y border-line">
-        <div class="wrap py-10 flex items-center justify-between flex-wrap gap-6">
+        <div class="wrap py-10 flex items-center justify-center flex-wrap gap-5">
             <span class="text-sm text-slate-soft font-medium whitespace-nowrap">Trabajamos con</span>
             <div class="flex gap-9 flex-wrap items-center">
                 <span class="font-mono text-sm font-medium text-navy-700 tracking-wide">YPF S.A.</span>

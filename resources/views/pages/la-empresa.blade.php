@@ -1,25 +1,28 @@
 @extends('layouts.app')
 
 @section('title', 'La Empresa')
-@section('description', 'Infolog S.R.L. custodia el Archivo Técnico Avellaneda de YPF: más de un millón de elementos catalogados desde 1909, certificados ISO 9001 y miembros de CEPERA.')
+@section('description', 'Infolog S.R.L. es la empresa que custodia el Archivo Técnico Avellaneda de YPF: el archivo de exploración petrolífera más importante de América del Sur.')
 
 @section('content')
 
-    {{-- INTRO --}}
+    {{-- IDENTIDAD --}}
     <section class="bg-navy-950 text-white">
         <div class="wrap py-20 sm:py-24">
             <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-14 items-center">
                 <div>
                     <span class="eyebrow eyebrow-on-dark">La Empresa</span>
-                    <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-[18ch]">La memoria técnica del Archivo Técnico Avellaneda, desde 1909.</h1>
-                    <p class="mt-6 max-w-[58ch] text-lg text-[#d7dee4] leading-relaxed">
+                    <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-[18ch]">Custodios del Archivo Técnico Avellaneda.</h1>
+                    <p class="mt-6 max-w-[56ch] text-lg text-[#d7dee4] leading-relaxed">
                         Infolog S.R.L. tiene a su cargo la custodia, administración, modernización y seguridad del
-                        Archivo Técnico Avellaneda de YPF S.A. — el archivo de exploración petrolífera más importante
-                        de América del Sur. Bajo inventario propio conservamos desde el informe técnico original del
-                        pozo N.º&nbsp;5, perforado en 1909, hasta los datos sísmicos 3D de última generación de Vaca Muerta.
+                        Archivo Técnico Avellaneda de YPF S.A.: el archivo de exploración petrolífera más importante
+                        de América del Sur.
+                    </p>
+                    <p class="mt-4 max-w-[56ch] text-lg text-[#d7dee4] leading-relaxed">
+                        Bajo nuestro inventario conviven el informe original del pozo N.º&nbsp;5, perforado en 1909,
+                        y los datos sísmicos 3D de última generación de Vaca Muerta.
                     </p>
                 </div>
-                <img src="/images/infoEmpresa.png" alt="Infolog" class="w-48 justify-self-center lg:justify-self-end opacity-90">
+                <img src="/images/infolog-logo.png" alt="Infolog Argentina" width="551" height="528" class="w-56 justify-self-center lg:justify-self-end">
             </div>
         </div>
     </section>
@@ -36,52 +39,39 @@
         </div>
     </section>
 
-    {{-- SERVICIOS --}}
+    {{-- QUIÉNES SOMOS --}}
     <section class="section bg-paper">
         <div class="wrap">
             <div class="max-w-[640px] mb-12">
-                <span class="eyebrow">Qué hacemos</span>
-                <h2 class="mt-3 text-2xl sm:text-3xl text-navy-950">Seis líneas de servicio, un mismo estándar de trazabilidad.</h2>
+                <span class="eyebrow">Quiénes somos</span>
+                <h2 class="mt-3 text-2xl sm:text-3xl text-navy-950">Una empresa de custodia documental, no un depósito.</h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach ($servicios as $slug => $servicio)
-                    <a href="{{ route('servicios.show', $slug) }}" class="group block border border-line rounded overflow-hidden hover:border-amber transition">
-                        <div class="aspect-[16/10] overflow-hidden bg-paper-tint">
-                            <img src="{{ $servicio['image'] }}" alt="{{ $servicio['title'] }}" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-300">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="text-base font-bold text-navy-950">{{ $servicio['title'] }}</h3>
-                            <p class="mt-2 text-sm text-slate leading-relaxed">{{ $servicio['summary'] }}</p>
-                            <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-amber-dark group-hover:text-amber">Conocé más →</span>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- ROADMAP --}}
-    <section class="bg-navy-800 text-white">
-        <div class="wrap section">
-            <div class="max-w-[640px] mb-12">
-                <span class="eyebrow eyebrow-on-dark">Hoja de ruta 2026</span>
-                <h2 class="mt-3 text-2xl sm:text-3xl">Tres frentes de reconversión tecnológica</h2>
-                <p class="mt-4 text-[#c3ced7] leading-relaxed">
-                    La dirección de Infolog sostiene la necesidad de profundizar la reconversión tecnológica del
-                    Archivo Técnico Avellaneda para responder a las demandas de un mercado corporativo cada vez
-                    más digitalizado y exigente.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                @foreach ($roadmap as $item)
-                    <div class="bg-navy-900 border border-white/10 rounded p-7">
-                        <span class="font-mono text-xs text-amber tracking-widest">{{ $item['tag'] }}</span>
-                        <h3 class="mt-3 text-lg font-bold">{{ $item['title'] }}</h3>
-                        <p class="mt-2.5 text-sm text-[#c3ced7] leading-relaxed">{{ $item['body'] }}</p>
-                    </div>
-                @endforeach
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line border border-line">
+                <div class="bg-paper p-9">
+                    <h3 class="text-xl text-navy-950">Responsabilidad institucional</h3>
+                    <p class="mt-3 text-[0.96rem] text-slate leading-relaxed">
+                        Damos soporte a YPF S.A., a la Secretaría de Energía de la Nación, a gobiernos provinciales
+                        y a compañías privadas del sector energético.
+                    </p>
+                    <div class="w-[34px] h-0.5 bg-amber mt-5"></div>
+                </div>
+                <div class="bg-paper p-9">
+                    <h3 class="text-xl text-navy-950">Calidad certificada</h3>
+                    <p class="mt-3 text-[0.96rem] text-slate leading-relaxed">
+                        Sistema de Gestión de la Calidad certificado bajo norma ISO 9001 y membresía en CEPERA,
+                        la Cámara de Empresas Petroenergéticas de la República Argentina.
+                    </p>
+                    <div class="w-[34px] h-0.5 bg-amber mt-5"></div>
+                </div>
+                <div class="bg-paper p-9">
+                    <h3 class="text-xl text-navy-950">Guarda activa</h3>
+                    <p class="mt-3 text-[0.96rem] text-slate leading-relaxed">
+                        No sólo conservamos: digitalizamos, remasterizamos y georreferenciamos el acervo para
+                        mantenerlo consultable por las próximas generaciones de técnicos.
+                    </p>
+                    <div class="w-[34px] h-0.5 bg-amber mt-5"></div>
+                </div>
             </div>
         </div>
     </section>

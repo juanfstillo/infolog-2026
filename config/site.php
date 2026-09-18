@@ -6,8 +6,9 @@ return [
         ['label' => 'Inicio', 'route' => 'home'],
         ['label' => 'La Empresa', 'route' => 'la-empresa'],
         ['label' => 'Servicios', 'route' => 'servicios.index'],
+        ['label' => 'Conocenos', 'route' => 'conocenos'],
+        ['label' => 'Política de Calidad', 'route' => 'politica-calidad'],
         ['label' => 'Nuestro Cliente', 'route' => 'nuestro-cliente'],
-        ['label' => 'Prensa', 'route' => 'prensa'],
     ],
 
     'footer_links' => [
@@ -24,6 +25,22 @@ return [
         'phone_display' => '+54 11 3535-3993',
         'phone_href' => 'tel:+541135353993',
         'map_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.7937848210195!2d-58.386487084502114!3d-34.65991046798096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccca7c89b3c2d%3A0x39e4bb0660acb025!2sTte.%20Gral.%20Garc%C3%ADa%20629%2C%20Pi%C3%B1eyro%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1582774842550!5m2!1ses-419!2sar',
+    ],
+
+    'documents' => [
+        'politica_calidad' => [
+            'path' => '/docs/politica-de-calidad.pdf',
+            'filename' => 'Infolog-SRL-Politica-de-Calidad.pdf',
+            'code' => 'DG-01 · Revisión 05',
+        ],
+    ],
+
+    'video' => [
+        'institucional' => [
+            'youtube_id' => 'sozscnkdkfk',
+            'title' => 'Video institucional de Infolog S.R.L.',
+            'poster' => '/images/infolog-conocenos-1800.jpg',
+        ],
     ],
 
     'stats' => [
@@ -52,6 +69,25 @@ return [
     ],
 
     'servicios' => [
+        'digitalizacion-geologica' => [
+            'title' => 'Digitalización de información geológica',
+            'summary' => 'Conversión de datos de registros de pozos a formatos digitales de alta fidelidad.',
+            'image' => '/images/digitalizacion1.png',
+            'featured' => true,
+            'badge' => 'Servicio destacado',
+            'headline' => 'Hacemos digitalización.',
+            'pitch' => 'Convertimos el archivo físico en dato consultable: registros de pozos, perfiles, mapas geológicos y sísmica 3D que todavía existe únicamente en papel. Es el servicio que articula toda nuestra hoja de ruta de modernización.',
+            'highlights' => [
+                'Perfiles de pozo, planos y documentos de gran formato',
+                'Georreferenciación GPS de proyectos exploratorios 3D',
+                'Remasterización de soportes magnéticos descontinuados',
+                'Entrega integrada a bases de datos de consulta interactiva',
+            ],
+            'body' => [
+                'Convertimos registros de pozos, perfiles y mapas geológicos en datos digitales listos para los flujos de trabajo de interpretación actuales, preservando la resolución y el valor técnico del material original.',
+                'Este proceso es central en nuestra hoja de ruta de modernización: incluye la georreferenciación GPS de proyectos exploratorios 3D que todavía existen únicamente en papel.',
+            ],
+        ],
         'almacenamiento-y-distribucion' => [
             'title' => 'Almacenamiento y distribución de documentos',
             'summary' => 'Personal capacitado para resolver rápidamente lo demandado por nuestro cliente.',
@@ -61,13 +97,13 @@ return [
                 'El régimen de distribución está pensado para la operación real de la industria: centenares de materiales se mueven mensualmente entre el archivo y los equipos técnicos que los requieren, sin comprometer la integridad de los soportes originales.',
             ],
         ],
-        'digitalizacion-geologica' => [
-            'title' => 'Digitalización de información geológica',
-            'summary' => 'Conversión de datos de registros de pozos a formatos digitales de alta fidelidad.',
-            'image' => '/images/digitalizacion1.png',
+        'escaneo-documentos' => [
+            'title' => 'Escaneo de documentos',
+            'summary' => 'Equipos de alta gama para el escaneo de hojas, perfiles, documentos y planos.',
+            'image' => '/images/escaner.jpg',
             'body' => [
-                'Convertimos registros de pozos, perfiles y mapas geológicos en datos digitales listos para los flujos de trabajo de interpretación actuales, preservando la resolución y el valor técnico del material original.',
-                'Este proceso es central en nuestra hoja de ruta de modernización: incluye la georreferenciación GPS de proyectos exploratorios 3D que todavía existen únicamente en papel.',
+                'Contamos con equipos de escaneo de alta gama preparados para digitalizar hojas, perfiles de pozo, documentos técnicos y planos de gran formato, manteniendo la fidelidad del original.',
+                'El resultado se integra a nuestras bases de datos de consulta interactiva, que simplifican y aceleran el acceso de los técnicos del sector a la información que necesitan.',
             ],
         ],
         'guarda-coronas-cutting' => [
@@ -92,18 +128,10 @@ return [
             'title' => 'Gestión de calidad',
             'summary' => 'Certificación ISO 9001 y membresía CEPERA respaldan cada proceso.',
             'image' => '/images/logo_boreauVeritas.png',
+            'image_fit' => 'contain',
             'body' => [
                 'Nuestro Sistema de Gestión de la Calidad está certificado bajo la norma internacional ISO 9001, con auditorías externas periódicas, cronogramas anuales de objetivos mensurables y planes de capacitación permanente para el equipo técnico.',
                 'Somos miembros de la Cámara de Empresas Petroenergéticas de la República Argentina (CEPERA), y sostenemos programas proactivos de seguridad industrial, salud ocupacional y mitigación de riesgos —incluido un sistema fijo de protección contra incendios a base de gas Inergen, diseñado específicamente para no dañar soportes documentales ni digitales.',
-            ],
-        ],
-        'escaneo-documentos' => [
-            'title' => 'Escaneo de documentos',
-            'summary' => 'Equipos de alta gama para el escaneo de hojas, perfiles, documentos y planos.',
-            'image' => '/images/escaner.jpg',
-            'body' => [
-                'Contamos con equipos de escaneo de alta gama preparados para digitalizar hojas, perfiles de pozo, documentos técnicos y planos de gran formato, manteniendo la fidelidad del original.',
-                'El resultado se integra a nuestras bases de datos de consulta interactiva, que simplifican y aceleran el acceso de los técnicos del sector a la información que necesitan.',
             ],
         ],
     ],

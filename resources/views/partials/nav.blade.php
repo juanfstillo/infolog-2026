@@ -1,11 +1,16 @@
 <header class="sticky top-0 z-40 bg-navy-950 border-b border-white/10">
-    <div class="wrap flex items-center justify-between h-[72px]">
-        <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="Infolog Argentina — inicio">
-            <img src="/images/infoEmpresa.png" alt="Infolog" class="h-8 w-auto">
+    <div class="wrap flex items-center justify-between gap-6 h-20">
+        <a href="{{ route('home') }}" class="flex shrink-0 items-center" aria-label="Infolog Argentina — inicio">
+            <img
+                src="/images/infolog-logo.png"
+                alt="Infolog Argentina"
+                width="551" height="528"
+                class="h-14 w-auto"
+            >
         </a>
 
-        <nav aria-label="Navegación principal" class="hidden lg:block">
-            <ul class="flex gap-8 list-none m-0 p-0">
+        <nav aria-label="Navegación principal" class="hidden xl:block">
+            <ul class="flex gap-6 list-none m-0 p-0">
                 @foreach (config('site.nav') as $item)
                     <li>
                         <a href="{{ route($item['route']) }}"
@@ -17,11 +22,11 @@
             </ul>
         </nav>
 
-        <a href="{{ route('contacto') }}" class="hidden lg:inline-flex btn-primary text-sm">Contacto</a>
+        <a href="{{ route('contacto') }}" class="hidden xl:inline-flex btn-primary shrink-0 text-sm">Contacto</a>
 
         <button
             type="button"
-            class="lg:hidden text-white p-2"
+            class="xl:hidden text-white p-2"
             aria-expanded="false"
             aria-controls="mobile-nav"
             onclick="document.getElementById('mobile-nav').classList.toggle('hidden'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');"
@@ -33,7 +38,7 @@
         </button>
     </div>
 
-    <div id="mobile-nav" class="hidden lg:hidden border-t border-white/10 bg-navy-950">
+    <div id="mobile-nav" class="hidden xl:hidden border-t border-white/10 bg-navy-950">
         <ul class="wrap list-none m-0 py-4 flex flex-col gap-1">
             @foreach (config('site.nav') as $item)
                 <li>
